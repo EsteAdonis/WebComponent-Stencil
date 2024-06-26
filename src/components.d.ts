@@ -22,7 +22,8 @@ export namespace Components {
     }
     interface UcSideDrawer {
         "header": string;
-        "open": boolean;
+        "open": () => Promise<void>;
+        "opened": boolean;
     }
 }
 declare global {
@@ -60,7 +61,7 @@ declare namespace LocalJSX {
     }
     interface UcSideDrawer {
         "header"?: string;
-        "open"?: boolean;
+        "opened"?: boolean;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
