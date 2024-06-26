@@ -11,6 +11,13 @@
   <body>
     <!-- <my-component first="Stencil" middle="Adonis & Iris" last="'Don't call me a framework' JS"></my-component> -->
 
-    <uc-side-drawer></uc-side-drawer>
+    <uc-side-drawer header="Main Menu"></uc-side-drawer>
+
+    <script>
+      const sideDrawer = document.querySelector('uc-side-drawer');
+      setTimeout(() => {
+        sideDrawer.setAttribute('header',  'It has changed via Attribute');
+      }, 3000);
+    </script>
   </body>
 </html>
