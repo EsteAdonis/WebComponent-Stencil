@@ -22,6 +22,7 @@ export namespace Components {
     }
     interface UcSideDrawer {
         "header": string;
+        "open": boolean;
     }
 }
 declare global {
@@ -59,6 +60,7 @@ declare namespace LocalJSX {
     }
     interface UcSideDrawer {
         "header"?: string;
+        "open"?: boolean;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

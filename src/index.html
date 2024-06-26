@@ -29,7 +29,7 @@
   </head>
   <body>
     <!-- <my-component first="Stencil" middle="Adonis & Iris" last="'Don't call me a framework' JS"></my-component> -->
-
+    <button id="side-drawer-btn">Open Side Menu</button>
     <uc-side-drawer header="Main Menu">
       <nav class="side-nav">
         <ul>
@@ -41,7 +41,14 @@
     </uc-side-drawer>
 
     <script>
+      const sideDrawerButton = document.querySelector('#side-drawer-btn');
       const sideDrawer = document.querySelector('uc-side-drawer');
+      sideDrawerButton.addEventListener('click', () => {
+        if (!sideDrawer.open) {
+          sideDrawer.open = true;
+        }
+      });
+
       setTimeout(() => {
         sideDrawer.setAttribute('header',  'It has changed via Attribute');
       }, 3000);
