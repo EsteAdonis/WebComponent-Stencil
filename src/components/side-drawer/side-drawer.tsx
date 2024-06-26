@@ -8,7 +8,12 @@ import { Component, h, Prop } from '@stencil/core';
 
 export class SideDrawer {
   @Prop({ reflect: true }) header: string = '';
-  @Prop({ reflect: true }) open: boolean = false;
+  @Prop({ reflect: true, mutable: true }) open: boolean = false;
+
+  onCloseDrawer() {
+    this.open = false;
+  }
+
 
   render() {
     // let content = null;
@@ -25,7 +30,10 @@ export class SideDrawer {
     
     return (
       <aside>
-        <header><h1>{this.header}</h1></header>
+        <header>
+          <h1>{this.header}</h1>
+          <button onClick={this.onCloseDrawer.bind(this)}>X</button>
+        </header>
         <main>
           <slot></slot>
         </main>
