@@ -44,7 +44,8 @@ export class SideDrawer {
 
     console.log(this.showContactInfo);
     
-    return (
+    return[
+      <div class="backdrop" onClick={this.onCloseDrawer.bind(this)}></div>,
       <aside>
         <header>
           <h1>{this.header}</h1>
@@ -60,6 +61,6 @@ export class SideDrawer {
           {mainContent}
         </main>
       </aside>
-    )
+    ]
   }
 }
